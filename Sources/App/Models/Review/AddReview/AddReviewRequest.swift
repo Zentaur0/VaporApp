@@ -5,4 +5,10 @@
 //  Created by Антон Сивцов on 23.01.2022.
 //
 
-import Foundation
+import Vapor
+
+struct AddReviewRequest: Content {
+    var good_id: Int
+    var mark: Int
+    var review: String
+}
