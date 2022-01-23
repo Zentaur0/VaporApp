@@ -16,6 +16,9 @@ func routes(_ app: Application) throws {
     let catalogData = CatalogDataController()
     app.get("get_catalog", use: catalogData.getCatalog)
     
+    let getGood = GetGoodByIDController()
+    app.post("good", use: getGood.getGood)
+    
     app.get { req in
         return "It works!"
     }
