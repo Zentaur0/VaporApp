@@ -7,6 +7,9 @@ func routes(_ app: Application) throws {
     let login = LoginController()
     app.post("login", use: login.login)
     
+    let logout = LogoutController()
+    app.post("logout", use: logout.logout)
+    
     app.get { req in
         return "It works!"
     }
