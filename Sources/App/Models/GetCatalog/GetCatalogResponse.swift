@@ -14,16 +14,3 @@ struct CatalogItem: Content {
     var product_name: String
     var price: Int
 }
-
-//[
-//  {
-//    "id_product": 123,
-//    "product_name": "Ноутбук",
-//    "price": 45600
-//  },
-//  {
-//    "id_product": 456,
-//    "product_name": "Мышка",
-//    "price": 1000
-//  }
-//]

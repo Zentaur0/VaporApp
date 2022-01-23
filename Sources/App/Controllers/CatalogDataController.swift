@@ -14,6 +14,12 @@ class CatalogDataController {
             CatalogItem(id_product: 456, product_name: "Мышка", price: 1000)
         ]
         
-        return req.eventLoop.future(response)
+        guard let body = try? req.query.decode(CatalogRequest.self) else {
+            return req.eventLoop.future(response)
+        }
+        
+        let count = body.count ?? 0
+        let resultResponse = Array(response.prefix(count))
+        return req.eventLoop.future(resultResponse)
     }
 }
