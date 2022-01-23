@@ -15,7 +15,7 @@ class CatalogDataController {
         ]
         
         guard let body = try? req.query.decode(CatalogRequest.self) else {
-            return req.eventLoop.future(response)
+            throw Abort(.badRequest)
         }
         
         let count = body.count ?? response.count

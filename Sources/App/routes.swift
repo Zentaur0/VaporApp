@@ -19,6 +19,11 @@ func routes(_ app: Application) throws {
     let getGood = GetGoodByIDController()
     app.post("good", use: getGood.getGood)
     
+    let review = ReviewController()
+    app.post("add_review", use: review.addReview)
+    app.post("remove_review", use: review.removeReview)
+    app.get("all_reviews", use: review.getReviews)
+    
     app.get { req in
         return "It works!"
     }
