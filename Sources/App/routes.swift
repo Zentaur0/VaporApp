@@ -10,6 +10,9 @@ func routes(_ app: Application) throws {
     let logout = LogoutController()
     app.post("logout", use: logout.logout)
     
+    let dataChange = DataChangeController()
+    app.post("change_data", use: dataChange.changeData)
+    
     app.get { req in
         return "It works!"
     }
