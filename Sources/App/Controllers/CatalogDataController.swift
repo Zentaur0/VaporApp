@@ -18,7 +18,7 @@ class CatalogDataController {
             return req.eventLoop.future(response)
         }
         
-        let count = body.count ?? 0
+        let count = body.count ?? response.count
         let resultResponse = Array(response.prefix(count))
         return req.eventLoop.future(resultResponse)
     }
