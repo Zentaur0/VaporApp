@@ -13,6 +13,9 @@ func routes(_ app: Application) throws {
     let dataChange = DataChangeController()
     app.post("change_data", use: dataChange.changeData)
     
+    let catalogData = CatalogDataController()
+    app.get("get_catalog", use: catalogData.getCatalog)
+    
     app.get { req in
         return "It works!"
     }
